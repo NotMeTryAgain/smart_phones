@@ -1,0 +1,14 @@
+<%= form_for @operating_system do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+
+<ul>
+  <% @operating_systems.each do |os| %>
+    <li>
+      <%= os.name %>
+    </li>
+  <% end %>
+</ul>
