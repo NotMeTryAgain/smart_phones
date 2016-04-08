@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'pry'
 gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
@@ -15,6 +15,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'byebug'
+  gem 'launchy'
 end
 
 group :development do
@@ -22,3 +23,4 @@ group :development do
   gem 'spring'
 end
 
+# <!-- <%=  f.collection_select(:os_id, @operating_systems, :id, :name) %> -->

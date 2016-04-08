@@ -1,0 +1,41 @@
+<h1>Phones</h1>
+
+<%= form_for @phone do |f| %>
+  <%= f.label :manufacturer %>
+  <%= f.text_field :manufacturer %>
+
+  <%= f.label :screen_size %>
+  <%= f.text_field :screen_size %>
+
+  <%= f.label :operating_system_id %>
+  <%= f.select(:operating_system_id, options_for_select(@os_collection)) %>
+
+  <%= f.label :charging_port %>
+  <%= f.text_field :charging_port %>
+
+  <%= f.label :phone_name %>
+  <%= f.text_field :phone_name %>
+
+  <%= f.label :quantity %>
+  <%= f.text_field :quantity %>
+
+  <%= f.submit "Submit" %>
+<% end %>
+
+<ul>
+  <% @phones.each do |phone| %>
+    <li>
+      <%= phone.manufacturer %>
+      <%= phone.screen_size %>
+      <%= phone.operating_system.name %>
+      <%= phone.charging_port %>
+      <%= phone.phone_name %>
+      <%= phone.quantity %>
+      <% if phone.in_stock? %>
+        (instock)
+      <% else %>
+        (not available)
+      <% end %>
+    </li>
+  <% end %>
+</ul>
